@@ -1,4 +1,6 @@
 ﻿using Api.Installers.Interfaces;
+using Application;
+using Infrastructure;
 
 namespace Api.Installers.InstallServices
 {
@@ -8,6 +10,8 @@ namespace Api.Installers.InstallServices
         {
             // Add services to the container.
             services.AddControllers();
+            services.AddApplication();
+            services.AddInfrastructure();
         }
     }
 }
