@@ -1,4 +1,5 @@
 using Api.Installers.Extensions;
+using Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseExpectionHandlerMiddleware();
 }
 
 app.UseHttpsRedirection();
